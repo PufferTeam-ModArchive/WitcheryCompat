@@ -64,6 +64,11 @@ public class BlockStockadeModded extends BlockStockade {
         }
     }
 
+    @Override
+    public int damageDropped(int meta) {
+        return meta;
+    }
+
     public void setTipTexture(boolean b) {
         this.tipTexturing = b;
     }
