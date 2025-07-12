@@ -16,7 +16,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockStockadeModded extends BlockStockade {
 
-    public static String[] woodNames;
+    String[] woodNames;
     String modName;
 
     @SideOnly(Side.CLIENT)
@@ -57,9 +57,15 @@ public class BlockStockadeModded extends BlockStockade {
             if (modName.equals("biomesoplenty")) {
                 this.tree[i] = iconRegister.registerIcon("biomesoplenty:log_" + woodNames[i] + "_side");
                 this.tree_top[i] = iconRegister.registerIcon("biomesoplenty:log_" + woodNames[i] + "_heart");
+            } else if (modName.equals("thaumcraft")) {
+                this.tree[i] = iconRegister.registerIcon("thaumcraft:" + woodNames[i] + "side");
+                this.tree_top[i] = iconRegister.registerIcon("thaumcraft:" + woodNames[i] + "top");
             }
-
         }
+    }
+
+    public String[] getWoods() {
+        return woodNames;
     }
 
     @Override

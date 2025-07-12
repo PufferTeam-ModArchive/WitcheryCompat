@@ -36,6 +36,9 @@
 dependencies {
     runtimeOnlyNonPublishable("com.github.GTNewHorizons:NotEnoughItems:2.7.4-GTNH:dev")
 
-    api files("libs/BiomesOPlenty-1.7.10-2.1.0.2308-universal.jar")
+    runtimeOnly "thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev"
+    runtimeOnly files("libs/BiomesOPlenty-1.7.10-2.1.0.2308-universal.jar")
     api files("libs/witchery-1.7.10-0.24.1.jar")
+    runtimeOnly files("libs/BaublesExpanded-2.1.2-dev.jar") 
+    
 }

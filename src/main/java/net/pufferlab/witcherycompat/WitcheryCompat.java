@@ -7,6 +7,7 @@ import net.pufferlab.witcherycompat.itemblocks.ItemBlockStockadeModded;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -32,14 +33,21 @@ public class WitcheryCompat {
     public static CommonProxy proxy;
 
     public static Block stockade_bop;
+    public static Block stockade_thaumcraft;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
 
         stockade_bop = new BlockStockadeModded(Constants.bopWoodTypes, "biomesoplenty");
+        stockade_thaumcraft = new BlockStockadeModded(Constants.thaumcraftWoodTypes, "thaumcraft");
 
-        GameRegistry.registerBlock(stockade_bop, ItemBlockStockadeModded.class, "stockade_bop");
+        if (Loader.isModLoaded("BiomesOPlenty")) {
+            GameRegistry.registerBlock(stockade_bop, ItemBlockStockadeModded.class, "stockade_bop");
+        }
+        if (Loader.isModLoaded("Thaumcraft")) {
+            GameRegistry.registerBlock(stockade_thaumcraft, ItemBlockStockadeModded.class, "stockade_thaumcraft");
+        }
     }
 
     @Mod.EventHandler
