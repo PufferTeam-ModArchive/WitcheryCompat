@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.pufferlab.witcherycompat.blocks.BlockStockadeModded;
 
 public class ItemBlockStockadeModded extends ItemBlock {
+
     public ItemBlockStockadeModded(Block block) {
         super(block);
     }

@@ -2,17 +2,17 @@ package net.pufferlab.witcherycompat.blocks;
 
 import java.util.List;
 
+import net.minecraft.block.Block;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
+
 import com.emoniph.witchery.blocks.BlockStockade;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-import net.minecraft.block.Block;
-import static net.minecraft.block.Block.soundTypeWood;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.IIcon;
 
 public class BlockStockadeModded extends BlockStockade {
 
@@ -38,16 +38,14 @@ public class BlockStockadeModded extends BlockStockade {
     @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int meta) {
-        if (meta < 0 || meta >= woodNames.length)
-            meta = 0;
+        if (meta < 0 || meta >= woodNames.length) meta = 0;
         return (side == 1 || side == 0 || this.tipTexturing) ? this.tree_top[meta] : this.tree[meta];
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item block, CreativeTabs creativeTabs, List<ItemStack> list) {
-        for (int i = 0; i < woodNames.length; i++)
-            list.add(new ItemStack(this, 1, i));
+        for (int i = 0; i < woodNames.length; i++) list.add(new ItemStack(this, 1, i));
     }
 
     @Override
