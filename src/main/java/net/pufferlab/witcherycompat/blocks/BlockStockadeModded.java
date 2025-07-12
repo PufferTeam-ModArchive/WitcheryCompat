@@ -10,10 +10,12 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.block.Block;
+import static net.minecraft.block.Block.soundTypeWood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 
 public class BlockStockadeModded extends BlockStockade {
+
     public static String[] woodNames;
     String modName;
 
@@ -27,7 +29,8 @@ public class BlockStockadeModded extends BlockStockade {
 
     public BlockStockadeModded(String[] names, String mod) {
         super(false);
-        
+
+        this.setStepSound(Block.soundTypeWood);
         modName = mod;
         woodNames = names;
     }
