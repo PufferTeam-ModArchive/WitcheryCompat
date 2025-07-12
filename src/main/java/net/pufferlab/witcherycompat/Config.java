@@ -2,15 +2,15 @@ package net.pufferlab.witcherycompat;
 
 import java.io.File;
 
-import net.minecraftforge.common.config.Configuration;
+//import net.minecraftforge.common.config.Configuration;
 
 public class Config {
 
     public static void synchronizeConfiguration(File configFile) {
-        Configuration configuration = new Configuration(configFile);
+        //Configuration configuration = new Configuration(configFile);
 
-        if (configuration.hasChanged()) {
-            configuration.save();
-        }
+        //if (configuration.hasChanged()) {
+        //    configuration.save();
+        //}
     }
 }

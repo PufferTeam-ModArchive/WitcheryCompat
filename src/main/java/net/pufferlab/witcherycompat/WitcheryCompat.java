@@ -2,7 +2,11 @@ package net.pufferlab.witcherycompat;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import net.minecraft.block.Block;
+import net.pufferlab.witcherycompat.blocks.BlockStockadeModded;
+import net.pufferlab.witcherycompat.itemblocks.ItemBlockStockadeModded;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -20,11 +24,17 @@ public class WitcheryCompat {
     @SidedProxy(clientSide = "net.pufferlab.witcherycompat.ClientProxy", serverSide = "net.pufferlab.witcherycompat.CommonProxy")
     public static CommonProxy proxy;
 
+    public static Block stockade_bop;
+
     @Mod.EventHandler
     // preInit "Run before anything else. Read your config, create blocks, items, etc, and register them with the
     // GameRegistry." (Remove if not needed)
     public void preInit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
+
+        stockade_bop = new BlockStockadeModded(Constants.bopWoodTypes, "biomesoplenty");
+
+        GameRegistry.registerBlock(stockade_bop, ItemBlockStockadeModded.class, "stockade_bop");
     }
 
     @Mod.EventHandler
