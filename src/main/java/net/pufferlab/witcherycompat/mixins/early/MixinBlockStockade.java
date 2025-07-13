@@ -1,4 +1,4 @@
-package net.pufferlab.witcherycompat.mixins.early.stockade;
+package net.pufferlab.witcherycompat.mixins.early;
 
 import net.minecraft.block.Block;
 import net.minecraft.world.IBlockAccess;

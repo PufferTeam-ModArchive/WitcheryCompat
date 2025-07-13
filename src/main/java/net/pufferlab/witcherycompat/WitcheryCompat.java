@@ -39,14 +39,14 @@ public class WitcheryCompat {
     public void preInit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
 
-        stockade_bop = new BlockStockadeModded(Constants.bopWoodTypes, "biomesoplenty");
+        stockade_bop = new BlockStockadeModded(Constants.bopWoodTypes, "bop");
         stockade_thaumcraft = new BlockStockadeModded(Constants.thaumcraftWoodTypes, "thaumcraft");
 
         if (Loader.isModLoaded("BiomesOPlenty")) {
-            GameRegistry.registerBlock(stockade_bop, ItemBlockStockadeModded.class, "stockade_bop");
+            GameRegistry.registerBlock(stockade_bop, ItemBlockStockadeModded.class, "bop_stockade");
         }
         if (Loader.isModLoaded("Thaumcraft")) {
-            GameRegistry.registerBlock(stockade_thaumcraft, ItemBlockStockadeModded.class, "stockade_thaumcraft");
+            GameRegistry.registerBlock(stockade_thaumcraft, ItemBlockStockadeModded.class, "thaumcraft_stockade");
         }
     }
 

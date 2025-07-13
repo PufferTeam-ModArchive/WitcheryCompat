@@ -54,7 +54,7 @@ public class BlockStockadeModded extends BlockStockade {
         this.tree = new IIcon[woodNames.length];
         this.tree_top = new IIcon[woodNames.length];
         for (int i = 0; i < this.tree.length; i++) {
-            if (modName.equals("biomesoplenty")) {
+            if (modName.equals("bop")) {
                 this.tree[i] = iconRegister.registerIcon("biomesoplenty:log_" + woodNames[i] + "_side");
                 this.tree_top[i] = iconRegister.registerIcon("biomesoplenty:log_" + woodNames[i] + "_heart");
             } else if (modName.equals("thaumcraft")) {
@@ -66,6 +66,10 @@ public class BlockStockadeModded extends BlockStockade {
 
     public String[] getWoods() {
         return woodNames;
+    }
+
+    public String getMod() {
+        return modName;
     }
 
     @Override
