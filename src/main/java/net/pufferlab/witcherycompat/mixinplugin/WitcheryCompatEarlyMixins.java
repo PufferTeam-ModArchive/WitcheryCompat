@@ -24,6 +24,8 @@ public class WitcheryCompatEarlyMixins implements IFMLLoadingPlugin, IEarlyMixin
         List<String> mixins = new ArrayList<>();
 
         mixins.add("MixinBlockStockade");
+        mixins.add("MixinBlockWitchWoodSlab");
+        mixins.add("MixinBlockWitchWoodStairs");
 
         return mixins;
     }
